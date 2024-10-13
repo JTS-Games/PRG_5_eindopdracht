@@ -17,5 +17,9 @@ Made task list and prioritisations:
 - Maken aboutpagina - tussen les 4 en 5 - could have
 - Individuele productpagina - tussen les 5 en 6 - must have
 - Accaunts en autorisatie - tussen les 6 en 7 - must have
-- Beveleging - tussen les 7 en 8 - should have
+- Beveileging - tussen les 7 en 8 - should have
 - Bugfixing en polishing - na les 8 - would rather have it than not
+
+Made ERD:
+
+![ERD](./images/ERD_1.png)

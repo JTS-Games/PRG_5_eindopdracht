@@ -17,14 +17,20 @@ Route::get('/contact', function() {
     ]);
 })->name('contact');
 
+Route::get('/home', function() {
+    return view('home');
+})->name('home');
+
+
 // This is made for a lesson, can be deleted later
+/*
 Route::get('products/{productID}', function(string $productID) {
     $productID = 'macbook';
     return view('products', [
         'productID' => $productID
     ]);
 });
-
+*/
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

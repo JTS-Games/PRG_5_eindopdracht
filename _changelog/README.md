@@ -23,3 +23,9 @@ Made task list and prioritisations:
 Made ERD:
 
 ![ERD](./images/ERD_1.png)
+
+<b>14/10/2024</b>
+
+Remade ERD:
+
+![ERD](./images/ERD_2.png)

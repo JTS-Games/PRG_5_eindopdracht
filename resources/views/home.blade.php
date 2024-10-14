@@ -1,1 +1,5 @@
-<p>Wilcome to the secret shop</p>
+<x-layout title="Home">
+    <h1>Enchanters of League</h1>
+    <p>Sona or something</p>
+</x-layout>
+

@@ -12,10 +12,10 @@
         font-size: 1.7rem;
     }
 </style>
-
-<x-layout title="Contact">
+<x-layout title="Subclasslist">
     <main>
-        <h1>Hi, I'm Joey :D</h1>
-        <p>This is my email: {{$personalEMail}}</p>
+        <h1>{{$subclass->name}}</h1>
+        <h2>{{$subclass->description}}</h2>
+        <p>{{$subclass->tips}}</p>
     </main>
 </x-layout>

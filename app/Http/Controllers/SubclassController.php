@@ -3,19 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Enchanter;
 use App\Models\Subclass;
 use Illuminate\Http\Request;
 
-class EnchanterController extends Controller
+class SubclassController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $enchanters = Enchanter::all();
-        return view('enchanter.index', compact('enchanters'));
+        $subclasses = Subclass::all();
+        return view('subclass.index', compact('subclasses'));
     }
 
     /**
@@ -31,12 +30,7 @@ class EnchanterController extends Controller
      */
     public function store(Request $request)
     {
-        $enchanter = new Enchanter();
-        $enchanter->name = 'Sona';
-        $enchanter->description = 'Very cool';
-        $enchanter->user_id = '42';
-        $enchanter->save();
-
+        //
     }
 
     /**
@@ -44,8 +38,8 @@ class EnchanterController extends Controller
      */
     public function show(string $id)
     {
-        $enchanter = Enchanter::find($id);
-        return view('enchanter.show', compact('enchanter'));
+        $subclass = Subclass::find($id);
+        return view('subclass.show', compact('subclass'));
     }
 
     /**

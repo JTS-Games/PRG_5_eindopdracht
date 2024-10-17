@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->string('name',100);
-            $table->integer('subclass_id');
+            $table->foreignId('subclass_id')->constrained();
             $table->text('description');
             $table->integer('user_id');
 

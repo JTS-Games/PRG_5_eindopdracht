@@ -12,12 +12,12 @@
         font-size: 1.7rem;
     }
 </style>
-<x-layout title="Enchanterlist">
+<x-layout title="Subclasslist">
     <main>
-        <h1>Here is a list of enchanters:</h1>
+        <h1>Here is a list of subclasses:</h1>
         <ul>
-            @foreach($enchanters as $enchanter)
-            <li><a href="{{route('enchanters.show', $enchanter)}}">{{$enchanter->name}}</a></li>
+            @foreach($subclasses as $subclass)
+            <li><a href="{{route('subclasses.show', $subclass)}}">{{$subclass->name}}</a></li>
           @endforeach
         </ul>
     </main>

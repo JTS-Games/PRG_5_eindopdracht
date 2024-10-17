@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EnchanterController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubclassController;
 use Illuminate\Support\Facades\Route;
 
 //routes bestand
@@ -44,5 +45,5 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('/enchanters', EnchanterController::class);
-
+Route::resource('/subclasses', SubclassController::class);
 require __DIR__.'/auth.php';

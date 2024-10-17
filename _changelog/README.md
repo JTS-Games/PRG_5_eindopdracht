@@ -42,5 +42,15 @@ Made details page of enchanters.
 
 Connected thsoe 2.
 
-Forgot to push :(
+Forgot to push to Github :(
+
+<b>17/10/2024</b>
+
+Pushed to Github what I forgot.
+
+Updated the styling.
+
+Made the subclasses page.
+
+Connected the subclasses and the enchanter page.
 

@@ -12,6 +12,5 @@
 <body>
 @include('partials.navigation')
 {{$slot}}
-{{dd($title)}}
 </body>
 </html>

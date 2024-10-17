@@ -29,3 +29,18 @@ Made ERD:
 Remade ERD:
 
 ![ERD](./images/ERD_2.png)
+
+And adjusted to feedback:
+
+![ERD](./images/ERD_3.png)
+
+<b>15/10/2024</b>
+
+Made list of enchanters on home page.
+
+Made details page of enchanters.
+
+Connected thsoe 2.
+
+Forgot to push :(
+

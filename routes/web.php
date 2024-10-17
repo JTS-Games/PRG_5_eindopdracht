@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EnchanterController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,6 @@ Route::get('/home', function() {
     return view('home');
 })->name('home');
 
-
 // This is made for a lesson, can be deleted later
 /*
 Route::get('products/{productID}', function(string $productID) {
@@ -42,5 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('/enchanters', EnchanterController::class);
 
 require __DIR__.'/auth.php';

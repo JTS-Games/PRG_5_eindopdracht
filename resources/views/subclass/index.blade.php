@@ -14,7 +14,8 @@
 </style>
 <x-layout title="Subclasslist">
     <main>
-        <h1>Here is a list of subclasses:</h1>
+        <h1>These are the possible subclasses.</h1>
+        <h2>Click on a subclass to view more information:</h2>
         <ul>
             @foreach($subclasses as $subclass)
             <li><a href="{{route('subclasses.show', $subclass)}}">{{$subclass->name}}</a></li>

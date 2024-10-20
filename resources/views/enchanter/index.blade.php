@@ -14,7 +14,8 @@
 </style>
 <x-layout title="Enchanterlist">
     <main>
-        <h1>Here is a list of enchanters:</h1>
+        <h1>These are the Enchanters of League.</h1>
+        <h2>Click on an enchanter to view more information:</h2>
         <ul>
             @foreach($enchanters as $enchanter)
             <li><a href="{{route('enchanters.show', $enchanter)}}">{{$enchanter->name}}</a></li>

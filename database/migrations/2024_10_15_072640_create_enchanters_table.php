@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name',100);
             $table->foreignId('subclass_id')->constrained();
             $table->text('description');
-            $table->integer('user_id');
+            $table->foreignId('user_id')->constrained();
 
             $table->timestamps();
         });

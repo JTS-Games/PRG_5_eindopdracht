@@ -54,3 +54,18 @@ Made the subclasses page.
 
 Connected the subclasses and the enchanter page.
 
+20/10/2024
+
+Updated wording on pages to be more clear.
+
+21/10/2024
+
+Made form for enchanters page.
+
+22/10/2024
+
+Made form for subclasses page.
+
+Made forms _actually_ working (woohoo).
+
+

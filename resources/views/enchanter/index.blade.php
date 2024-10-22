@@ -21,5 +21,6 @@
             <li><a href="{{route('enchanters.show', $enchanter)}}">{{$enchanter->name}}</a></li>
           @endforeach
         </ul>
+        <a href="{{route('enchanters.create')}}">Create new</a>
     </main>
 </x-layout>

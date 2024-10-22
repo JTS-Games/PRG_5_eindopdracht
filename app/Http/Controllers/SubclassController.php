@@ -22,7 +22,7 @@ class SubclassController extends Controller
      */
     public function create()
     {
-        //
+        return view('subclass.create');
     }
 
     /**
@@ -30,7 +30,12 @@ class SubclassController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $subclass = new Subclass();
+        $subclass->name = $request->input('name');
+        $subclass->description = $request->input('description');
+        $subclass->tips = $request->input('tips');
+        $subclass->save();
+        return redirect()->route('subclasses.index');
     }
 
     /**

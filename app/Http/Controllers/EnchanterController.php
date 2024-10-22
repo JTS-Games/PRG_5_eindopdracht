@@ -23,7 +23,7 @@ class EnchanterController extends Controller
      */
     public function create()
     {
-        //
+        return view('enchanter.create');
     }
 
     /**
@@ -32,11 +32,12 @@ class EnchanterController extends Controller
     public function store(Request $request)
     {
         $enchanter = new Enchanter();
-        $enchanter->name = 'Sona';
-        $enchanter->description = 'Very cool';
-        $enchanter->user_id = '42';
+        $enchanter->name = $request->input('name');
+        $enchanter->subclass_id = $request->input('subclass_id');
+        $enchanter->description = $request->input('description');
+        $enchanter->user_id = 1;
         $enchanter->save();
-
+        return redirect()->route('enchanters.index');
     }
 
     /**

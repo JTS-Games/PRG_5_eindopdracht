@@ -10,6 +10,11 @@ class Enchanter extends Model
 {
     public function subclass(): BelongsTo
     {
-        return $this->belongsTo(subclass::class);
+        return $this->belongsTo(Subclass::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

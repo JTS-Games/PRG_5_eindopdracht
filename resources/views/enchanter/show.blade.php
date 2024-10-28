@@ -19,5 +19,14 @@
         <h2>Subclass: {{$enchanter->subclass->name}}</h2>
         <p>{{$enchanter->subclass->description}}.</p>
         <p>Subclass tip: {{$enchanter->subclass->tips}}.</p>
+        <a href="{{route('enchanters.index')}}">Go back</a>
+
+        @if ($enchanter->user->is(auth()->user()))
+            <form action="{{route('enchanters.destroy', $enchanter)}}" method="post">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="Delete">
+            </form>
+        @endif
     </main>
 </x-layout>

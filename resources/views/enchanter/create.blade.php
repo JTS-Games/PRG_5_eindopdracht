@@ -29,8 +29,12 @@
                 <input type="text" name="name" id="name" required>
             </div>
             <div>
-                <label for="subclass_id">Subclass id</label>
-                <input type="number" name="subclass_id" id="subclass_id" required>
+                <label for="subclass_id">Subclass</label>
+                <select name="subclass_id" id="subclass_id" required>
+                    @foreach($subclasses as $subclass)
+                        <option value={{$subclass->id}}>{{$subclass->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div>
                 <label for="description">Description</label>

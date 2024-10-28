@@ -18,7 +18,7 @@
         <h2>Click on a subclass to view more information:</h2>
         <ul>
             @foreach($subclasses as $subclass)
-            <li><a href="{{route('subclasses.show', $subclass)}}">ID: {{$subclass->id}} {{$subclass->name}}</a></li>
+            <li><a href="{{route('subclasses.show', $subclass)}}">{{$subclass->id}}: {{$subclass->name}}</a></li>
           @endforeach
         </ul>
         <a href="{{route('subclasses.create')}}">Create new</a>

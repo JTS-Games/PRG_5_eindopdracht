@@ -23,7 +23,8 @@ class EnchanterController extends Controller
      */
     public function create()
     {
-        return view('enchanter.create');
+        $subclasses = Subclass::all();
+        return view('enchanter.create', compact('subclasses'));
     }
 
     /**
@@ -31,12 +32,20 @@ class EnchanterController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the request data
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'subclass_id' => 'required|integer|exists:subclasses,id',
+            'description' => 'nullable|string',
+        ]);
+
         $enchanter = new Enchanter();
         $enchanter->name = $request->input('name');
         $enchanter->subclass_id = $request->input('subclass_id');
         $enchanter->description = $request->input('description');
-        $enchanter->user_id = 1;
+        $enchanter->user_id = auth()->user()->id;
         $enchanter->save();
+
         return redirect()->route('enchanters.index');
     }
 
@@ -70,6 +79,8 @@ class EnchanterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $enchanter = Enchanter::find($id);
+        $enchanter->delete();
+        return redirect()->route('enchanters.index');
     }
 }

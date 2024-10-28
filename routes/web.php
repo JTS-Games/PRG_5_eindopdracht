@@ -5,10 +5,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubclassController;
 use Illuminate\Support\Facades\Route;
 
-//routes bestand
-
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 // This is made for a lesson, can be deleted later
@@ -33,7 +31,6 @@ Route::get('products/{productID}', function(string $productID) {
 });
 */
 
-//advanced stuff, DO NOT TOCUH UNLESS NEEDED
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -46,4 +43,5 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('/enchanters', EnchanterController::class);
 Route::resource('/subclasses', SubclassController::class);
+Route::resource('/new-dashboard', \App\Http\Controllers\DashboardController::class);
 require __DIR__.'/auth.php';

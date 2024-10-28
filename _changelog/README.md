@@ -54,18 +54,26 @@ Made the subclasses page.
 
 Connected the subclasses and the enchanter page.
 
-20/10/2024
+<b>20/10/2024</b>
 
 Updated wording on pages to be more clear.
 
-21/10/2024
+<b>21/10/2024</b>
 
 Made form for enchanters page.
 
-22/10/2024
+<b>22/10/2024</b>
 
 Made form for subclasses page.
 
 Made forms _actually_ working (woohoo).
 
+Made dropdown for subclasses
 
+<b>23/10/2024</b>
+
+Made custom dashboard page.
+
+<b>28/10/2024</b>
+
+Added secure validation

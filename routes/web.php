@@ -44,4 +44,5 @@ Route::middleware('auth')->group(function () {
 Route::resource('/enchanters', EnchanterController::class);
 Route::resource('/subclasses', SubclassController::class);
 Route::resource('/new-dashboard', \App\Http\Controllers\DashboardController::class);
+Route::resource('/admin', \App\Http\Controllers\AdminController::class);
 require __DIR__.'/auth.php';

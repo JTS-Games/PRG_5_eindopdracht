@@ -77,3 +77,14 @@ Made custom dashboard page.
 <b>28/10/2024</b>
 
 Added secure validation
+
+<b>1/11/2024</b>
+
+PHPStorm stopped working for some reason, had to continue the project in VSCode, couldn't troubleshoot the problem.
+
+<b>2/11/2024</b>
+
+Made admin page
+
+Made edit page
+

@@ -21,6 +21,11 @@
             <li><a href="{{route('subclasses.show', $subclass)}}">{{$subclass->id}}: {{$subclass->name}}</a></li>
           @endforeach
         </ul>
-        <a href="{{route('subclasses.create')}}">Create new</a>
+        @auth
+            @if(auth()->check() && auth()->user()->role === 1 || auth()->check() && auth()->user()->role === 2)
+                <a href="{{route('subclasses.create')}}">Create new</a>
+            @endif
+        @endauth
+
     </main>
 </x-layout>

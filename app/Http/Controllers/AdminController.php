@@ -14,8 +14,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $enchanters = Enchanter::all();
-        return view('admin', compact('enchanters'));
+        if (auth()->check() && auth()->user()->role === 1) {
+            $enchanters = Enchanter::all();
+            return view('admin', compact('enchanters'));
+        } else {
+            return redirect()->route('nicetry');
+        }
     }
 
     /**

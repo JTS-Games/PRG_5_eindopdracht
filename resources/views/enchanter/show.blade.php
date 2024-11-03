@@ -21,7 +21,7 @@
         <p>Subclass tip: {{$enchanter->subclass->tips}}.</p>
         <a href="{{route('enchanters.index')}}">Go back</a>
 
-        @if ($enchanter->user->is(auth()->user()))
+        @if ($enchanter->user && $enchanter->user->is(auth()->user()))
             <form action="{{route('enchanters.destroy', $enchanter)}}" method="post">
                 @csrf
                 @method('DELETE')

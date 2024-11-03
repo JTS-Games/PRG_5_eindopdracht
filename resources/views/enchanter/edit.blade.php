@@ -15,16 +15,16 @@
 <x-layout title="Enchanterlist">
 @if (auth()->check() && auth()->user()->role === 1)
     <h2>Edit {{$enchanter->name}}:</h2>
-    <form action="{{route('enchanters.update' ,'$enchanter')}}" method="PUT">
+    <form action="{{route('enchanters.update' ,'$enchanter')}}" method="PATCH">
         @csrf
         <div class="formFields">
             <div>
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" placeholder="{{$enchanter->name}}" required>
             </div>
             <div>
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description" required>
+                <input type="text" name="description" id="description" placeholder="{{$enchanter->description}}" required>
             </div>
         </div>
         <div>

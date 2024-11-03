@@ -12,10 +12,17 @@ class EnchanterController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $enchanters = Enchanter::all();
-        return view('enchanter.index', compact('enchanters'));
+        $subclasses = Subclass::all();
+        $subclassId = $request->input('subclass_id');
+        $enchanters = Enchanter::where('status', 1)
+
+            ->when($subclassId, function($query) use ($subclassId) {
+                return $query->where('subclass_id', $subclassId);
+            })->get();
+
+        return view('enchanter.index', compact('enchanters', 'subclasses'));
     }
 
     /**
@@ -46,6 +53,14 @@ class EnchanterController extends Controller
         $enchanter->user_id = auth()->user()->id;
         $enchanter->save();
 
+        $user = auth()->user();
+
+        $enchanterCount = Enchanter::where('user_id', $user->id)->count();
+        if ($user->role !== 1 && $enchanterCount == 5) {
+            $user->role = 2;
+            $user->save();
+        }
+
         return redirect()->route('enchanters.index');
     }
 
@@ -63,9 +78,7 @@ class EnchanterController extends Controller
      */
     public function edit(string $id)
     {
-        $enchanter = Enchanter::find($id);
-        $subclasses = Subclass::all();
-        return view('enchanter.edit', compact('subclasses', 'enchanter'));
+
     }
 
     /**
@@ -74,21 +87,6 @@ class EnchanterController extends Controller
     public function update(Request $request, string $id)
     {
 
-        // Validate the request data
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'subclass_id' => 'required|integer|exists:subclasses,id',
-            'description' => 'nullable|string',
-        ]);
-
-        $enchanter = Enchanter::find($id);
-        @dd($enchanter);
-        $enchanter->name = $request->input('name');
-        $enchanter->description = $request->input('description');
-        $enchanter->save();
-
-        // Redirect to the index route or any other desired location
-        return redirect()->route('enchanters.index');
     }
 
     /**
@@ -98,6 +96,14 @@ class EnchanterController extends Controller
     {
         $enchanter = Enchanter::find($id);
         $enchanter->delete();
+        return redirect()->route('enchanters.index');
+    }
+
+    public function toggleStatus(Enchanter $enchanter)
+    {
+        $enchanter->status = !$enchanter->status;
+        $enchanter->save();
+
         return redirect()->route('enchanters.index');
     }
 }

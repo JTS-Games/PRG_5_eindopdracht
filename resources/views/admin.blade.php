@@ -19,11 +19,19 @@
         @foreach($enchanters as $enchanter)
             <li>
                 <a href="{{route('enchanters.show', $enchanter)}}">{{$enchanter->name}}</a>
-            @if (auth()->check() && auth()->user()->role === 1)
-                <a href="{{route('enchanters.edit', $enchanter)}}">Edit</a>
-                @endif
+                <form id="toggle-form-{{ $enchanter->id }}" action="{{ route('enchanters.toggleStatus', $enchanter) }}" method="POST">
+                    @csrf
+                    @method('PATCH')
+                    <button type="submit">
+                        {{ $enchanter->status ? 'Turn Off' : 'Turn On' }}
+                    </button>
+                </form>
+                <form action="{{route('enchanters.destroy', $enchanter)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="Delete">
+                </form>
             </li>
-
         @endforeach
     </main>
 </x-layout>
